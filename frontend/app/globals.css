@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f6f8;
+  --surface: #ffffff;
+  --ink: #101828;
+  --ink-muted: #667085;
+  --border: #e3e7ec;
+  --accent: #0f172a;
+  --accent-hover: #1e293b;
+  --focus-ring: #0e7490;
+  --spam: #b42318;
+  --spam-bg: #fef3f2;
+  --spam-border: #fecdca;
+  --ham: #067647;
+  --ham-bg: #ecfdf3;
+  --ham-border: #abefc6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-focus-ring: var(--focus-ring);
+  --color-spam: var(--spam);
+  --color-spam-bg: var(--spam-bg);
+  --color-spam-border: var(--spam-border);
+  --color-ham: var(--ham);
+  --color-ham-bg: var(--ham-bg);
+  --color-ham-border: var(--ham-border);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+body {
+  background-color: var(--background);
+  background-image: radial-gradient(
+    circle at 50% -10%,
+    rgba(15, 23, 42, 0.06),
+    transparent 45%
+  );
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* Consistent, visible keyboard focus everywhere, independent of color alone */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
