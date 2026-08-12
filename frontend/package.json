@@ -1,9 +1,6 @@
 {
   "name": "spam-detection-frontend",
   "version": "0.1.0",
-  "engines": {
-    "node": "24.11.1"
-  },
   "private": true,
   "scripts": {
     "dev": "next dev",
