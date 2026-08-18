@@ -1,6 +1,9 @@
 from pathlib import Path
 import pickle
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # pyrefly: ignore [missing-import]
 import nltk
@@ -26,6 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 MODEL_PATH = BASE_DIR / "model.pkl"
 VECTORIZER_PATH = BASE_DIR / "vectorizer.pkl"
+
+BASE_DIR = Path(__file__).resolve().parent
+
+ENV_PATH = BASE_DIR / ".env"
+
+load_dotenv(ENV_PATH)
 
 FRONTEND_URL = os.getenv(
     "FRONTEND_URL",
