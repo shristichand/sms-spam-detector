@@ -36,10 +36,9 @@ ENV_PATH = BASE_DIR / ".env"
 
 load_dotenv(ENV_PATH)
 
-FRONTEND_URL = os.getenv(
-    "FRONTEND_URL",
-    "http://localhost:3000"
-)
+FRONTEND_URL = os.getenv("FRONTEND_URL")
+
+print("CORS FRONTEND_URL:", FRONTEND_URL)
 
 
 # --------------------------------------------------
@@ -71,6 +70,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[FRONTEND_URL],
+        allow_credentials=True,
+
     allow_methods=["*"],
     allow_headers=["*"],
 )
